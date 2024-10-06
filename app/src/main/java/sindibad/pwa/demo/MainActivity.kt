@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 import sindibad.pwa.demo.pwa.view.WebViewActivity
 
 
@@ -20,7 +21,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        openSindibadPWA()
+        val openSindibadButton = findViewById<MaterialButton>(R.id.openBtn)
+        openSindibadButton.setOnClickListener { openSindibadPWA() }
     }
 
     private fun openSindibadPWA() {

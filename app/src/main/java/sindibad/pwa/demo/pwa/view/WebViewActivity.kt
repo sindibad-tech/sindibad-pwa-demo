@@ -36,15 +36,13 @@ class WebViewActivity : AppCompatActivity(),
 
     private var chooserLauncher: ActivityResultLauncher<Intent>? = null
 
-
     private var photoUri: Uri? = null
-    private val cookieManager = CookieManager.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_web_view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -70,7 +68,7 @@ class WebViewActivity : AppCompatActivity(),
                 }
             }
 
-        webView?.loadUrl("sindibad.iq")
+        webView?.loadUrl("https://sindibad.iq/")
     }
 
     private fun handleImageUri(uri: Uri) {
@@ -96,7 +94,7 @@ class WebViewActivity : AppCompatActivity(),
     }
 
     private fun setupWebView() {
-
+        webView = findViewById(R.id.webView)
         webView?.apply {
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
@@ -204,7 +202,6 @@ class WebViewActivity : AppCompatActivity(),
         }
         localFileChooserParams = null
         localFilePathCallback = null
-        cookieManager.removeSessionCookies { }
         super.onDestroy()
     }
 
