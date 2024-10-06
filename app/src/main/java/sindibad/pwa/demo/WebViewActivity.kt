@@ -1,4 +1,4 @@
-package sindibad.pwa.demo.pwa.view
+package sindibad.pwa.demo
 
 import android.Manifest
 import android.app.Activity
@@ -22,7 +22,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import sindibad.pwa.demo.R
 import sindibad.pwa.demo.helpers.PermissionHandler
 import java.text.SimpleDateFormat
 import java.util.Date
